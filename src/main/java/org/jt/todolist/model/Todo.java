@@ -15,9 +15,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Todo {
- @Id
- @GeneratedValue(strategy = GenerationType.IDENTITY)
- private int id;
- private String action;
- private boolean isCompleted;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private int id;
+  private String action;
+  private boolean isCompleted;
 }
