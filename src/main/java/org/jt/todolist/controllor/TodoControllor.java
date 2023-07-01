@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import lombok.RequiredArgsConstructor;
 
-// import jakarta.servlet.http.HttpServletRequest;
-
 @Controller
 @RequiredArgsConstructor
 public class TodoControllor {
@@ -27,27 +25,20 @@ public class TodoControllor {
 
   @PostMapping("/addtodo")
   String addTodo(@RequestParam("action") String action) {
-    System.out.println(action);
     var todo = Todo.builder().action(action).build();
     todoService.addTodo(todo);
     return "redirect:/todo";
   }
 
-  // String addTodo(HttpServletRequest request) {
-  // String todo = request.getParameter("action");
-  // System.out.println(todo);
-  // return "redirect:/todo";
-  // }
-
   @GetMapping("/removetodo")
-  public String removeTodo(@RequestParam int id){
+  public String removeTodo(@RequestParam int id) {
     todoService.removeById(id);
     return "redirect:/todo";
   }
 
   @GetMapping("/completetodo")
-  public String completedTodo(@RequestParam int id, @RequestParam("isComplete") boolean isCompleted){
+  public String completedTodo(@RequestParam int id, @RequestParam("isComplete") boolean isCompleted) {
     todoService.completeById(id, isCompleted);
-    return "redirect:/todo"; 
+    return "redirect:/todo";
   }
 }

@@ -15,7 +15,7 @@ public class TodoService {
   private final TodoRepository todoRepository;
 
   public void addTodo(Todo todo) {
-    todoRepository.save(todo); 
+    todoRepository.save(todo);
   }
 
   public List<Todo> todos() {
@@ -27,7 +27,7 @@ public class TodoService {
   }
 
   @Transactional
-  public void completeById(int id , boolean isCompleted) {
+  public void completeById(int id, boolean isCompleted) {
     todoRepository.updateIsCompleted(id, isCompleted);
   }
 }
