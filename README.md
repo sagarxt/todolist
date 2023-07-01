@@ -1,6 +1,6 @@
 # Todo List Application
 
-<img src="https://github.com/sagarxt/todolist/blob/master/assets/todolist-preview.png?raw=true">
+<img src="https://github.com/sagarxt/todolist/blob/master/assets/todolist-preview.png">
 
 This is a Todo List application built using the Spring framework, MySQL for database management, Thymeleaf for server-side rendering of HTML templates, and HTML/CSS/JS for the front-end.
 
