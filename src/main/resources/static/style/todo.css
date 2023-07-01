@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  /* vh = viewport hright */
+  display: grid;
+  place-items: center;
+  background-image: linear-gradient(60deg, deeppink, rgb(0, 110, 255));
+}
+
+.todo-add,
+.todo-show {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  /* background-color: aqua; */
+  gap: 2rem;
+}
+
+
+.todo-show {
+  padding: 1rem;
+}
+
+.todo-list {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding: 1rem;
+
+}
+
+.todo-list:last-child {
+  border-bottom: none;
+}
+
+/* 1st box*/
+.todo-add {
+  padding: 0.5rem;
+}
+
+.todo-add form {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.todo-add input {
+  font-size: 1.2rem;
+  padding: 0.3rem;
+}
+
+.todo-add [type="submit"] {
+  background-color: navy;
+  color: #fff;
+  cursor: pointer;
+}
+
+.strike {
+  text-decoration: line-through;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="/style/todo.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container"> <!-- .container -->
+        <div class="todo-add">
+            <form action="/addtodo" method="post">
+                <input type="text" name="action" value="" placeholder="Enter Text Here" required>
+                <input type="submit" name="" value="Add">
+            </form>
+        </div>
+        <div class="todo-show">
+            <div class="todo-list" th:each="todo : ${todos}">
+                <!-- <input type="checkbox" th:checked="${todo.isCompleted}" th:attr="onclick=|onComplete(${todo.id})|" id="isComplete"> -->
+                <input type="checkbox" th:checked="${todo.isCompleted}"  th:attr="onchange=|onCheckBoxClick(${todo.id}, this)|">
+                <p th:class="${todo.isCompleted ? 'strike' : ''}" id="strike" th:text="${todo.action}"></p>
+                <a href="#" th:attr="onclick=|onRemove(${todo.id})|"><i class="material-icons">&#xe872;</i></a>
+            </div>
+        </div>
+    </div>
+    <div></div>
+    <div></div> <!-- div*2 to create 2 div tags-->
+
+    <script src="/script/todo.js"></script>
+</body>
+
+</html>
+
+<!-- SPA = Single Page Application 
+    Literal : Value use to manuplate
+    ; = use to separate between 2 liones
+-->
